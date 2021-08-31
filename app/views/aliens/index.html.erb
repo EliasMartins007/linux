@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Aliens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aliens.each do |alien| %>
+      <tr>
+        <td><%= alien.name %></td>
+        <td><%= alien.age %></td>
+        <td><%= link_to 'Exibir', alien %></td>
+        <td><%= link_to 'Editar', edit_alien_path(alien) %></td>
+        <td><%= link_to 'Excluir', alien, method: :delete, data: { confirm: 'O registro será exlcuido permanentemente! Deseja realizar essa operação?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo', new_alien_path %>
