@@ -25,7 +25,8 @@ class AliensController < ApplicationController
 
     respond_to do |format|
       if @alien.save
-        format.html { redirect_to @alien, notice: "Alien was successfully created." }
+        # format.html { redirect_to @alien, notice: "Alien was successfully created." }
+        format.html { redirect_to @alien, notice: "Alien criado com sucesso." }
         format.json { render :show, status: :created, location: @alien }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,8 @@ class AliensController < ApplicationController
   def update
     respond_to do |format|
       if @alien.update(alien_params)
-        format.html { redirect_to @alien, notice: "Alien was successfully updated." }
+        # format.html { redirect_to @alien, notice: "Alien was successfully updated." }
+        format.html { redirect_to @alien, notice: "Alien atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @alien }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +53,8 @@ class AliensController < ApplicationController
   def destroy
     @alien.destroy
     respond_to do |format|
-      format.html { redirect_to aliens_url, notice: "Alien was successfully destroyed." }
+      # format.html { redirect_to aliens_url, notice: "Alien was successfully destroyed." }
+      format.html { redirect_to aliens_url, notice: "Alien excluido com successo." }
       format.json { head :no_content }
     end
   end
@@ -64,6 +67,6 @@ class AliensController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def alien_params
-      params.require(:alien).permit(:name, :age, :planet_id)
+      params.require(:alien).permit(:name, :age, :planet_id, :power_ids => [])
     end
 end

@@ -12,20 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :planet %>
+    <%= form.label :planet %><br>
     <%= collection_select(:alien, :planet_id, Planet.all, :id, :name) %>
   </div>
 
   <div class="field">
-    <%= form.label :Nome %>
+    <%= form.label :Nome %><br>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :age %>
+    <%= form.label :age %><br>
     <%= form.number_field :age %>
   </div>
 
+    <div class="field">
+    <%= form.label :powers %><br>
+    <%= collection_check_boxes(:alien, :power_ids, Power.all, :id, :name) %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
