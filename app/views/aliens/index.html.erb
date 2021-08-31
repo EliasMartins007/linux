@@ -18,6 +18,7 @@
         <td><%= alien.name %></td>
         <td><%= alien.planet.name %></td>
         <td><%= alien.age %></td>
+        <!--td><%= alien.power_ids %></td-->
         <td><%= link_to 'Exibir', alien %></td>
         <td><%= link_to 'Editar', edit_alien_path(alien) %></td>
         <td><%= link_to 'Excluir', alien, method: :delete, data: { confirm: 'O registro será exlcuido permanentemente! Deseja realizar essa operação?' } %></td>
