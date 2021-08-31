@@ -64,6 +64,6 @@ class AliensController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def alien_params
-      params.require(:alien).permit(:name, :age)
+      params.require(:alien).permit(:name, :age, :planet_id)
     end
 end

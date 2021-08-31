@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Aliens</h1>
+<h1>Aliens cadastrados</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Age</th>
+      <th>Planet</th>
+      <th>Age</th>    
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,6 +16,7 @@
     <% @aliens.each do |alien| %>
       <tr>
         <td><%= alien.name %></td>
+        <td><%= alien.planet.name %></td>
         <td><%= alien.age %></td>
         <td><%= link_to 'Exibir', alien %></td>
         <td><%= link_to 'Editar', edit_alien_path(alien) %></td>

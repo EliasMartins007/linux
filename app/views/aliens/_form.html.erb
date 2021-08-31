@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :planet %>
+    <%= collection_select(:alien, :planet_id, Planet.all, :id, :name) %>
+  </div>
+
+  <div class="field">
     <%= form.label :Nome %>
     <%= form.text_field :name %>
   </div>
